@@ -2,6 +2,6 @@ body{
   margin: 0;
   padding: 0;
 }/* You can add global styles to this file, and also import other style files */
-app-list-student,app-list-user,app-list-teacher,app-rapport,app-home,app-add-student,app-add-user,app-add-teacher {
+app-list-student,app-list-user,app-list-teacher,app-rapport,app-home,app-add-student,app-add-user,app-add-teacher,app-app-setting,app-school {
   width: 100%;
 }

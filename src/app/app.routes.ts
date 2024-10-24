@@ -14,6 +14,8 @@ import {
   UpdateTeacherComponent
 } from './presentation/components/shared/teatcher/update-teacher/update-teacher.component';
 import {UpdateUserComponent} from './presentation/components/shared/user/update-user/update-user.component';
+import {AppSettingComponent} from './presentation/components/shared/app-setting/app-setting.component';
+import {SchoolComponent} from './presentation/components/shared/school/school.component';
 
 export const routes: Routes = [
   { path : "login" , component : ConnexionComponent},
@@ -29,6 +31,8 @@ export const routes: Routes = [
       { path : "update-student" , component : UpdateStudentComponent},
       { path : "update-teacher" , component : UpdateTeacherComponent},
       { path : "update-user" , component : UpdateUserComponent},
+      { path : "setting" , component : AppSettingComponent},
+      { path : "school" , component : SchoolComponent},
     ]},
   { path : "" , redirectTo : "/login", pathMatch : "full"}
 ];
