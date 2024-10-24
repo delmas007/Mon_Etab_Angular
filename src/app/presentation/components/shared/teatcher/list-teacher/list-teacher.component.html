@@ -1,0 +1,70 @@
+<div class="main-content">
+  <main>
+    <header class="header">
+      <h1>Professeur (2)</h1>
+      <a routerLink="/base/add-teacher"> <img src="../icon/plus.png" style="width: 10px;height: 10px" alt=""> Nouveau profeseur</a>
+    </header>
+    <section class="table-section">
+      <table>
+        <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Matiere</th>
+          <th>Vacant</th>
+          <th>Age</th>
+          <th>Téléphone</th>
+          <th>Ville</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>KOUAKOU</td>
+          <td>George</td>
+          <td>Math</td>
+          <td>Non</td>
+          <td>40</td>
+          <td>0123456789</td>
+          <td>Touba</td>
+          <td>
+            <button class="edit-btn">Modifier</button>
+            <button class="delete-btn">Supprimer</button>
+          </td>
+        </tr>
+        <tr>
+          <td>ATTA</td>
+          <td>Flora</td>
+          <td>Fhysique</td>
+          <td>OUI</td>
+          <td>37</td>
+          <td>0123456789</td>
+          <td>Bouake</td>
+          <td>
+            <button class="edit-btn">Modifier</button>
+            <button class="delete-btn">Supprimer</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+</div>
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>ATTENTION !!!</h2>
+    </div>
+    <div class="modal-body">
+      <p>Voulez-vous supprimer ce professeur ?</p>
+    </div>
+    <div class="modal-footer">
+      <button id="confirmYes" class="modal-btn yes-btn">Oui</button>
+      <button id="confirmNo" class="modal-btn no-btn">Non</button>
+    </div>
+  </div>
+</div>
+
+<script src="../public/js/Modal.js"></script>

@@ -1,0 +1,46 @@
+<div class="main-content">
+  <main>
+    <div class="retour-container">
+      <a href="#" class="retour">← Retour</a>
+    </div>
+    <h2>Modifier le professeur - 245</h2>
+    <form id="addStudentForm">
+      <div class="form-row">
+        <input type="text" id="nom" placeholder="" value="Kouakou" required>
+        <input type="text" id="prenom" placeholder="Prénom" value="George" required>
+      </div>
+      <div class="form-row">
+        <div>
+          <label >Vacant :</label>
+        </div>
+        <div class="radio-group">
+          <label><input type="radio" name="vacant" value="oui"  required> oui</label>
+          <label><input type="radio" name="vacant" value="non" required> non</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <select id="classe" required>
+          <option value="">Sélectionner une matiere</option>
+          <option value="Math">Math</option>
+          <option value="Physique">Physique</option>
+          <option value="EPS">EPS</option>
+          <option value="Anglais" selected>Anglais</option>
+          <option value="SVT">SVT</option>
+          <option value="Philosophie">Philosophie</option>
+          <option value="Français">Français</option>
+        </select>
+        <input type="date" id="dateNaissance" value="2005-03-13" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" id="telephone" value="07784562511" placeholder="Téléphone">
+        <input type="text" id="ville" value="Bingerville" placeholder="Ville">
+      </div>
+      <div class="form-row buttons">
+        <button type="button" class="btn-cancel">Annuler</button>
+        <button type="submit" class="btn-save">Enregistrer</button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="../../../../../../../public/js/Home.js"></script>
