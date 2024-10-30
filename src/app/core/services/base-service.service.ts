@@ -13,6 +13,7 @@ export class BaseService {
   connexion(endPoint: string,data: any): Observable<any>{
     return this.http.post(`${this.baseUrl}/${endPoint}`,data)
   }
+
   getOne(endPoint: string, id: string) : Observable<any>{
     return this.http.get(`${this.baseUrl}/${endPoint}/${id}`);
   }

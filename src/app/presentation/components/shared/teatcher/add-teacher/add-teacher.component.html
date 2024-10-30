@@ -4,22 +4,22 @@
       <a href="#" class="retour">← Retour</a>
     </div>
     <h2>Ajouter un Professeur</h2>
-    <form id="addStudentForm">
+    <form id="addStudentForm" [formGroup]="form" (ngSubmit)="saveData()">
       <div class="form-row">
-        <input type="text" id="nom" placeholder="Nom" required>
-        <input type="text" id="prenom" placeholder="Prénom" required>
+        <input type="text" formControlName="nom" id="nom" placeholder="Nom" required>
+        <input type="text" formControlName="prenom" id="prenom" placeholder="Prénom" required>
       </div>
       <div class="form-row">
         <div>
           <label >Vacant :</label>
         </div>
         <div class="radio-group">
-          <label><input type="radio" name="vacant" value="oui"  required> oui</label>
-          <label><input type="radio" name="vacant" value="non" required> non</label>
+          <label><input type="radio" name="vacant" formControlName="vacant"  required> oui</label>
+          <label><input type="radio" name="vacant" formControlName="vacant"  required> non</label>
         </div>
       </div>
       <div class="form-row">
-        <select id="classe" required>
+        <select id="classe" formControlName="matiere" required>
           <option value="">Sélectionner une matiere</option>
           <option value="Math">Math</option>
           <option value="Physique">Physique</option>
@@ -29,12 +29,12 @@
           <option value="Philosophie">Philosophie</option>
           <option value="Français">Français</option>
         </select>
-        <input type="date" id="dateNaissance" required>
+        <input type="date" id="dateNaissance" formControlName="date" required>
       </div>
 
       <div class="form-row">
-        <input type="tel" id="telephone" placeholder="Téléphone">
-        <input type="text" id="ville" placeholder="Ville">
+        <input type="tel" id="telephone" formControlName="telephone" placeholder="Téléphone">
+        <input type="text" id="ville" formControlName="ville" placeholder="Ville">
       </div>
       <div class="form-row buttons">
         <button type="button" class="btn-cancel">Annuler</button>

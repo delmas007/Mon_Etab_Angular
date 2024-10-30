@@ -5,23 +5,23 @@
     </div>
 
     <h2>Ajouter un élève</h2>
-    <form id="addStudentForm">
+    <form id="addStudentForm" [formGroup]="form" (ngSubmit)="saveData()">
       <div class="form-row">
-        <input type="text" id="nom" placeholder="Nom" required>
-        <input type="text" id="prenom" placeholder="Prénom" required>
+        <input type="text" formControlName="nom" id="nom" placeholder="Nom" required>
+        <input type="text" formControlName="prenom" id="prenom" placeholder="Prénom" required>
       </div>
       <div class="form-row">
         <div class="radio-group">
-          <label><input type="radio" name="genre" value="homme" required> Homme</label>
-          <label><input type="radio" name="genre" value="femme" required> Femme</label>
+          <label><input type="radio" name="genre" formControlName="genre" value="homme" required> Homme</label>
+          <label><input type="radio" name="genre" formControlName="genre" value="femme" required> Femme</label>
         </div>
       </div>
       <div class="form-row">
-        <input type="text" id="matricule" placeholder="Matricule" required>
-        <input type="date" id="dateNaissance" required>
+        <input type="text" id="matricule" placeholder="Matricule" formControlName="matricule" required>
+        <input type="date" id="dateNaissance" formControlName="date" required>
       </div>
       <div class="form-row">
-        <select id="classe" required>
+        <select id="classe" required formControlName="classe">
           <option value="">Sélectionner une classe</option>
           <option value="1ere">1ère</option>
           <option value="2eme">2ème</option>
@@ -32,8 +32,8 @@
         </select>
       </div>
       <div class="form-row">
-        <input type="tel" id="telephone" placeholder="Téléphone">
-        <input type="text" id="ville" placeholder="Ville">
+        <input type="tel" id="telephone" formControlName="telephone" placeholder="Téléphone">
+        <input type="text" id="ville" formControlName="ville" placeholder="Ville">
       </div>
       <div class="form-row buttons">
         <button type="button" class="btn-cancel">Annuler</button>
