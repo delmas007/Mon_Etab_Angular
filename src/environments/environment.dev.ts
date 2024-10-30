@@ -1,5 +1,5 @@
 export const environmentDev = {
-  baseUrl: "/host",
+  baseUrl: "http://localhost:8080/api",
   endPoint: {
     login:"authenticate",
     student: {

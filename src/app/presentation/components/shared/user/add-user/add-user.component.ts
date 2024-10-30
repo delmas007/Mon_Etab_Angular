@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {BaseService} from '../../../../../core/services/base-service.service';
 
@@ -11,19 +11,18 @@ import {BaseService} from '../../../../../core/services/base-service.service';
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.css'
 })
-export class AddUserComponent {
-  form!: FormGroup;
-  constructor(private baseService: BaseService) { }
+export class AddUserComponent implements OnInit{
+  form! :FormGroup;
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      pseudo: new FormControl("",[Validators.required]),
-      motDePasse: new FormControl("",[Validators.required]),
-      confirmeMotDePasse: new FormControl("",[Validators.required])
-    });
+      pseudo: new FormControl("",[Validators.required,Validators.min(4)]),
+      motDePasse: new FormControl("",Validators.required),
+      confirmeMotDePasse: new FormControl("",Validators.required),
+    })
   }
-
-  saveData() {
+  save(){
     console.log(this.form.value)
   }
+
 }
