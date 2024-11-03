@@ -6,13 +6,13 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import {UserService} from '../services/user.service';
-import {Inject} from '@angular/core';
+import {inject, Inject} from '@angular/core';
 import {Router} from '@angular/router';
 
 
 export const authGuard: CanActivateFn = () => {
-  const userAuth = Inject(UserService);
-  let router = Inject(Router);
+  const userAuth = inject(UserService);
+  let router = inject(Router);
   if (userAuth && userAuth.isAuthenticated()){
     return true
   }else{

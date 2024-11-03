@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {BaseService} from '../../../../../core/services/base-service.service';
+import {environmentDev} from '../../../../../../environments/environment.dev';
 
 @Component({
   selector: 'app-add-user',
@@ -13,16 +14,24 @@ import {BaseService} from '../../../../../core/services/base-service.service';
 })
 export class AddUserComponent implements OnInit{
   form! :FormGroup;
-
+  constructor(private service:BaseService) {
+  }
   ngOnInit(): void {
     this.form = new FormGroup({
       pseudo: new FormControl("",[Validators.required,Validators.min(4)]),
-      motDePasse: new FormControl("",Validators.required),
+      password: new FormControl("",Validators.required),
       confirmeMotDePasse: new FormControl("",Validators.required),
     })
   }
   save(){
-    console.log(this.form.value)
+    this.service.create(environmentDev.endPoint.user.create,this.form.value).subscribe({
+      next:(response: any)=>{
+        console.log(response)
+      },
+      error:(error: any)=>{
+        console.log(error)
+      }
+    })
   }
 
 }

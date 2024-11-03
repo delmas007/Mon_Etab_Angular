@@ -25,14 +25,14 @@ export class BaseService {
       ? this.http.get(`${this.baseUrl}/${endPoint}/${id}`)
       : this.http.get(`${this.baseUrl}/${endPoint}`);
   }
-  create(endPoint: string, data: any, item?: any): Observable<any>{
-    return item !== null
-      ? this.http.post(`${this.baseUrl}/${endPoint}/${item}`, data)
-      : this.http.post(`${this.baseUrl}/${endPoint}`, data);
-  }
-  // create(endPoint: string, data: any): Observable<any>{
-  //     return  this.http.post(`${this.baseUrl}/${endPoint}`, data);
+  // create(endPoint: string, data: any, item?: any): Observable<any>{
+  //   return item !== null
+  //     ? this.http.post(`${this.baseUrl}/${endPoint}/${item}`, data)
+  //     : this.http.post(`${this.baseUrl}/${endPoint}`, data);
   // }
+  create(endPoint: string, data: any): Observable<any>{
+      return  this.http.post(`${this.baseUrl}/${endPoint}`, data);
+  }
   // createById(endPoint: string, data: any, item: any): Observable<any>{
   //   return this.http.post(`${this.baseUrl}/${endPoint}/${item}`, data);
   // }

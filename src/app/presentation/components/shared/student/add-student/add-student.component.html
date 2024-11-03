@@ -7,33 +7,33 @@
     <h2>Ajouter un élève</h2>
     <form id="addStudentForm" [formGroup]="form" (ngSubmit)="saveData()">
       <div class="form-row">
-        <input type="text" formControlName="nom" id="nom" placeholder="Nom" required>
-        <input type="text" formControlName="prenom" id="prenom" placeholder="Prénom" required>
+        <input type="text" formControlName="firstName" id="nom" placeholder="Nom" required>
+        <input type="text" formControlName="lastName" id="prenom" placeholder="Prénom" required>
       </div>
       <div class="form-row">
         <div class="radio-group">
-          <label><input type="radio" name="lastName" formControlName="gender" value="MAN" required> Homme</label>
-          <label><input type="radio" name="firstName" formControlName="gender" value="WOMAN" required> Femme</label>
+          <label><input type="radio" name="gender" formControlName="gender" value="MAN" required> Homme</label>
+          <label><input type="radio" name="gender" formControlName="gender" value="WOMAN" required> Femme</label>
         </div>
       </div>
       <div class="form-row">
         <input type="text" id="matricule" placeholder="Matricule" formControlName="matricule" required>
-        <input type="date" id="dateNaissance" formControlName="date" required>
+        <input type="date" id="dateNaissance" formControlName="birthday" required>
       </div>
+<!--      <div class="form-row">-->
+<!--        <select id="classe" required formControlName="classe">-->
+<!--          <option value="">Sélectionner une classe</option>-->
+<!--          <option value="1ere">1ère</option>-->
+<!--          <option value="2eme">2ème</option>-->
+<!--          <option value="3eme">3ème</option>-->
+<!--          <option value="4eme">4ème</option>-->
+<!--          <option value="5eme">5ème</option>-->
+<!--          <option value="6eme">6ème</option>-->
+<!--        </select>-->
+<!--      </div>-->
       <div class="form-row">
-        <select id="classe" required formControlName="classe">
-          <option value="">Sélectionner une classe</option>
-          <option value="1ere">1ère</option>
-          <option value="2eme">2ème</option>
-          <option value="3eme">3ème</option>
-          <option value="4eme">4ème</option>
-          <option value="5eme">5ème</option>
-          <option value="6eme">6ème</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <input type="tel" id="telephone" formControlName="telephone" placeholder="Téléphone">
-        <input type="text" id="ville" formControlName="ville" placeholder="Ville">
+        <input type="tel" id="telephone" formControlName="phoneNumber" placeholder="Téléphone">
+<!--        <input type="text" id="ville" formControlName="ville" placeholder="Ville">-->
       </div>
       <div class="form-row buttons">
         <button type="button" class="btn-cancel">Annuler</button>

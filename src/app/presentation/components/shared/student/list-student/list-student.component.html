@@ -20,10 +20,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>KOFFI</td>
-          <td>George</td>
-          <td>M</td>
+        <tr *ngFor="let student of students">
+          <td>{{student.firstName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student.gender}}</td>
           <td>Tle</td>
           <td>GDJ7GDGD</td>
           <td>25</td>

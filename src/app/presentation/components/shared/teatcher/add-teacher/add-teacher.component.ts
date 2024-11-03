@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BaseService} from '../../../../../core/services/base-service.service';
 import {MessageService} from 'primeng/api';
 import {AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {environmentDev} from '../../../../../../environments/environment.dev';
 
 @Component({
   selector: 'app-add-teacher',
@@ -18,18 +19,25 @@ export class AddTeacherComponent implements OnInit{
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nom: new FormControl("",[Validators.required]),
-      prenom: new FormControl("",[Validators.required]),
-      vacant: new FormControl("",[Validators.required]),
-      matiere: new FormControl("",[Validators.required]),
-      date: new FormControl("",[Validators.required]),
-      ville: new FormControl("",[Validators.required]),
-      telephone: new FormControl("",[Validators.required])
+      firstName: new FormControl("",[Validators.required]),
+      lastName: new FormControl("",[Validators.required]),
+      available: new FormControl("",[Validators.required]),
+      specialty: new FormControl("",[Validators.required]),
+      birthday: new FormControl("",[Validators.required]),
+      gender: new FormControl("",[Validators.required]),
+      phoneNumber: new FormControl("",[Validators.required])
     });
   }
 
 
   saveData() {
-    console.log(this.form.value)
+    this.baseService.create(environmentDev.endPoint.teacher.create,this.form.value).subscribe({
+      next:(response: any)=>{
+        console.log(response)
+      },
+      error:(error: any)=>{
+        console.log(error)
+      }
+    })
   }
 }
